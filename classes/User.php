@@ -1,10 +1,11 @@
 <?php 
-
+require_once __DIR__ . '/CreditCard.php';
 class User
 {
     protected $name;
     protected $lastname;
     protected $sconto = 10;
+    protected $card = [];
 
     public function __construct($name, $lastname)
     {
@@ -71,6 +72,29 @@ class User
         $this->sconto = $sconto;
 
         return $this;
+    }
+
+    /**
+     * Get the value of card
+     */ 
+    public function getCard()
+    {
+        return $this->card;
+    }
+
+    /**
+     * Set the value of card
+     *
+     * @return  self
+     */ 
+    public function setCard($card)
+    {
+        // $this->card = $card;
+        foreach ($card as $cc) {
+            $this->card[] = $cc;
+        }
+        return $this;
+        
     }
 }
 

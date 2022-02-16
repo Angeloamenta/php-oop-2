@@ -11,6 +11,26 @@ class Premium extends User
     parent::__construct($name, $lastname);
     
   }
+
+    /**
+     * Get the value of sconto
+     */ 
+    public function getSconto()
+    {
+        return $this->sconto;
+    }
+
+    /**
+     * Set the value of sconto
+     *
+     * @return  self
+     */ 
+    public function setSconto($sconto)
+    {
+        $this->sconto = $sconto;
+
+        return $this;
+    }
 }
 
 

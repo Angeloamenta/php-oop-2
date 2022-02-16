@@ -14,17 +14,34 @@ $user->insertCreditCard($c); -->
 require_once __DIR__ . '/classes/Product.php';
 require_once __DIR__ . '/classes/User.php';
 require_once __DIR__ . '/classes/Premium.php';
+require_once __DIR__ . '/classes/CreditCard.php';
 
 
 
-$scarpe = new Product("Adidas", 50);
-var_dump($scarpe);
+ $scarpe = new Product("Adidas", 50);
+// var_dump($scarpe);
 
 $user = new User ("Angelo", "Amenta");
-var_dump($user);
+// var_dump($user);
 
 $userPremium = new Premium ("Angelo", "Amenta");
-var_dump($userPremium);
+// var_dump($userPremium);
+
+// function finalPrice($price, $sconto) {
+//     $price - $sconto;
+// };
+// var_dump($scarpe->getPrice());
+// var_dump($userPremium->getSconto());
+
+// var_dump(finalPrice($scarpe->getPrice(), $userPremium->getSconto()));
+
+$card = new CreditCard ('mastercard', 333333);
+
+$user->setCard([
+    new CreditCard('mastercard', 333333),
+]);
+
+var_dump(setCard());
 
 
 
