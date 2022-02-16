@@ -5,7 +5,7 @@ class User
     protected $name;
     protected $lastname;
     protected $sconto = 10;
-    protected $card = [];
+    protected $card;
 
     public function __construct($name, $lastname)
     {
@@ -90,19 +90,19 @@ class User
     public function setCard($card)
     {
         // $this->card = $card;
-        if ( is_int($card['number'])) {
-            throw new Exception('Non mi hai passato un numero');
-        }else {
             
             foreach ($card as $cc) {
-                $this->card[] = $cc;
+                if (!is_int($cc['number'])) {
+                    throw new Exception('Non mi hai passato un numero');
+                }else {
+                    $this->card[] = $cc;
+                }
             }
-        }
         return $this;
         
     }
+    
 }
-
 
 
 
