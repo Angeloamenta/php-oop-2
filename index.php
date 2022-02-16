@@ -13,10 +13,18 @@ $user->insertCreditCard($c); -->
 
 require_once __DIR__ . '/classes/Product.php';
 require_once __DIR__ . '/classes/User.php';
+require_once __DIR__ . '/classes/Premium.php';
+
 
 
 $scarpe = new Product("Adidas", 50);
 var_dump($scarpe);
+
+$user = new User ("Angelo", "Amenta");
+var_dump($user);
+
+$userPremium = new Premium ("Angelo", "Amenta");
+var_dump($userPremium);
 
 
 
