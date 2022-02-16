@@ -35,14 +35,16 @@ $userPremium = new Premium ("Angelo", "Amenta");
 
 // var_dump(finalPrice($scarpe->getPrice(), $userPremium->getSconto()));
 
-$card = new CreditCard ('mastercard', 333333);
+// $card = new CreditCard ('mastercard', 333333);
 
-$user->setCard([
-    new CreditCard('mastercard', 333333),
-]);
-var_dump($user);
 // var_dump("prova",$user->setCard($card));
-
-
-
+try {
+    $user->setCard([
+        new CreditCard('mastercard', 333333),
+    ]);
+    var_dump($user);
+} catch (Exception $error) {
+    var_dump($error->getMessage());
+}
 ?>
+

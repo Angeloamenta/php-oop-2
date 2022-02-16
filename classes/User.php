@@ -90,8 +90,13 @@ class User
     public function setCard($card)
     {
         // $this->card = $card;
-        foreach ($card as $cc) {
-            $this->card[] = $cc;
+        if ( is_int($card['number'])) {
+            throw new Exception('Non mi hai passato un numero');
+        }else {
+            
+            foreach ($card as $cc) {
+                $this->card[] = $cc;
+            }
         }
         return $this;
         
