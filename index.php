@@ -40,8 +40,8 @@ $card = new CreditCard ('mastercard', 333333);
 $user->setCard([
     new CreditCard('mastercard', 333333),
 ]);
-
-var_dump(setCard());
+var_dump($user);
+// var_dump("prova",$user->setCard($card));
 
 
 
